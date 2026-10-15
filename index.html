@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Indian Bank — Banking Made Simple</title>
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="images/logo.png" as="image" />
+<style>
+@font-face{font-family:"Poppins";src:url("fonts/poppins-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/poppins-600.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Poppins";src:url("fonts/poppins-700.woff2") format("woff2");font-weight:700;font-display:swap}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Poppins",system-ui,-apple-system,sans-serif;background:#dce9fb;color:#12203a;line-height:1.5;overflow-x:hidden}
+img,svg{max-width:100%;height:auto;display:block}
+.container{width:min(1240px,92%);margin-inline:auto}
+.topbar{background:#0b3b8c;color:#fff;position:sticky;top:0;z-index:100}
+.topbar__inner{display:flex;align-items:center;gap:12px;padding:8px 0}
+.search{display:flex;align-items:center;background:#fff;border-radius:999px;padding:4px 5px 4px 16px;flex:1;min-width:0}
+.mainnav{background:#fff;border-bottom:1px solid #e3ecfa}
+.brand{display:flex;align-items:center;gap:10px;background:#fdb913;padding:8px 14px;margin:8px 0;border-radius:8px}
+.hero{padding:16px 0 8px}
+.hero__inner{display:grid;grid-template-columns:1fr;gap:16px}
+.hero-carousel{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 6px 20px rgba(11,59,140,.1)}
+.hero-slide{min-height:280px;padding:20px 16px 44px;background:linear-gradient(135deg,#fff,#eef5ff)}
+.tollfree__digits{font-size:clamp(2rem,9vw,2.8rem);font-weight:800;color:#5b6df8}
+</style>
+<link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="css/style.min.css" /></noscript>
+</head>
+<body>
+
+<!-- ======================= TOP BAR ======================= -->
+<header class="topbar">
+  <div class="container topbar__inner">
+    <!-- mobile hamburger -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+    <label for="nav-toggle" class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <form class="search" role="search">
+      <input type="text" placeholder="Search..." aria-label="Search" />
+      <button type="submit" aria-label="Search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      </button>
+    </form>
+
+    <nav class="topbar__links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Directors</a>
+      <a href="#">Career</a>
+      <a href="#">Locate Us</a>
+      <a href="#">Contact Us</a>
+      <a href="#main" class="skip">Skip to Main Content</a>
+    </nav>
+
+    <div class="topbar__utils">
+      <span class="font-size"><a href="#">A -</a> | <a href="#">A</a> | <a href="#">A+</a></span>
+      <label class="theme-switch" aria-label="Theme toggle">
+        <input type="checkbox" />
+        <span class="theme-switch__track"></span>
+      </label>
+      <a class="lang" href="#">Hindi</a>
+    </div>
+  </div>
+
+  <!-- ======================= MAIN NAV ======================= -->
+  <div class="mainnav">
+    <div class="container mainnav__inner">
+      <a class="brand" href="#" aria-label="Indian Bank Home">
+        <span class="brand__mark">
+          <img src="images/logo.png" alt="" width="38" height="38" fetchpriority="high" decoding="async" />
+        </span>
+        <span class="brand__text">
+          <span class="brand__hi">इंडियन बैंक</span>
+          <span class="brand__en">Indian Bank</span>
+          <span class="brand__sub">ALLAHABAD</span>
+        </span>
+      </a>
+
+      <nav class="meganav">
+        <ul>
+          <li class="has-dd">
+            <a href="#">Personal <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">Savings Account</a>
+              <a href="#">Current Account</a>
+              <a href="#">Fixed Deposits</a>
+              <a href="#">Home Loan</a>
+              <a href="#">Personal Loan</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Corporate <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">Working Capital</a>
+              <a href="#">Term Finance</a>
+              <a href="#">Trade Services</a>
+              <a href="#">Cash Management</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Agriculture <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">Kisan Credit Card</a>
+              <a href="#">Crop Loans</a>
+              <a href="#">Farm Mechanisation</a>
+              <a href="#">Agri Gold Loan</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">NRI <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">NRE Account</a>
+              <a href="#">NRO Account</a>
+              <a href="#">FCNR Deposits</a>
+              <a href="#">Remittances</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Trade &amp; Forex <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">Export Finance</a>
+              <a href="#">Import Finance</a>
+              <a href="#">Forex Cards</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Govt. Schemes <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">PM Jan Dhan Yojana</a>
+              <a href="#">Atal Pension Yojana</a>
+              <a href="#">Mudra Loan</a>
+              <a href="#">Sukanya Samriddhi</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Customer Corner <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">Grievance Redressal</a>
+              <a href="#">Forms &amp; Documents</a>
+              <a href="#">Safe Banking Tips</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Rates &amp; Charges <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">Interest Rates</a>
+              <a href="#">Service Charges</a>
+              <a href="#">Forex Rates</a>
+            </div>
+          </li>
+          <li class="has-dd">
+            <a href="#">Useful links <span class="caret"></span></a>
+            <div class="dd">
+              <a href="#">RBI</a>
+              <a href="#">DICGC</a>
+              <a href="#">CIBIL</a>
+            </div>
+          </li>
+          <li><a href="#">Customer Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- floating side tabs -->
+<a class="side-tab side-tab--left" href="#">
+  <span class="side-tab__icon">📊</span> Financial Result
+</a>
+<a class="side-tab side-tab--right" href="#">
+  Indian Bank Product <span class="side-tab__circle">‹</span>
+</a>
+
+<main id="main">
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <!-- CSS-only hero carousel -->
+      <div class="hero-carousel">
+        <input type="radio" name="hero" id="hero-1" checked />
+        <input type="radio" name="hero" id="hero-2" />
+        <input type="radio" name="hero" id="hero-3" />
+
+        <div class="hero-carousel__track">
+          <!-- Slide 1 : toll free -->
+          <div class="hero-slide">
+            <div class="hero-slide__grid">
+              <div class="tollfree">
+                <span class="pill pill--outline">Our New Toll Free Number for Domestic Phone Banking</span>
+                <div class="tollfree__number">
+                  <span class="tollfree__phone-icon">
+                    <svg viewBox="0 0 24 24" width="34" height="34" fill="#fff"><path d="M6.6 10.8c1.5 2.9 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+                  </span>
+                  <span class="tollfree__digits">1800&nbsp;1700</span>
+                </div>
+                <p class="tollfree__note">Our Old Toll Free number 1800 425 00000 will be discontinued from 01.09.2025</p>
+                <div class="tollfree__feats">
+                  <span>🛡️ EASY TO REMEMBER</span>
+                  <span>📞 EASY TO DIAL</span>
+                  <span>🎧 24X7 SUPPORT</span>
+                </div>
+                <a href="#" class="btn btn--gold">Live Now</a>
+              </div>
+
+              <div class="nri-table">
+                <span class="pill pill--outline">NRI Phone Banking</span>
+                <table>
+                  <thead>
+                    <tr><th>Calling from</th><th>International Toll Free Number</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>USA</td><td>18553003112</td></tr>
+                    <tr><td>UK</td><td>8000150930</td></tr>
+                    <tr><td>Malaysia</td><td>1800811173</td></tr>
+                    <tr><td>Singapore</td><td>8004923021</td></tr>
+                    <tr><td>Canada</td><td>18557772333</td></tr>
+                    <tr><td>UAE</td><td>800035702688</td></tr>
+                    <tr><td>Qatar</td><td>00 800101177</td></tr>
+                    <tr><td>Bahrain</td><td>+973 80004138</td></tr>
+                    <tr><td>Saudi Arabia</td><td>8008501325</td></tr>
+                    <tr><td>Other Countries</td><td>+91 22 4444 2888*</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="hero-slide hero-slide--alt1">
+            <div class="hero-slide__center">
+              <h2>Digital Banking, Reimagined</h2>
+              <p>Open an account in minutes. Bank anytime, anywhere with IndSmart.</p>
+              <a href="#" class="btn btn--gold">Explore Now</a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="hero-slide hero-slide--alt2">
+            <div class="hero-slide__center">
+              <h2>Home Loans from 8.40%*</h2>
+              <p>Zero processing fee for a limited period. Make your dream home real.</p>
+              <a href="#" class="btn btn--gold">Apply Today</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- arrows -->
+        <div class="hero-carousel__arrows">
+          <label for="hero-3" class="arrow arrow--prev" data-for="hero-1">‹</label>
+          <label for="hero-1" class="arrow arrow--prev" data-for="hero-2">‹</label>
+          <label for="hero-2" class="arrow arrow--prev" data-for="hero-3">‹</label>
+          <label for="hero-2" class="arrow arrow--next" data-for="hero-1">›</label>
+          <label for="hero-3" class="arrow arrow--next" data-for="hero-2">›</label>
+          <label for="hero-1" class="arrow arrow--next" data-for="hero-3">›</label>
+        </div>
+
+        <!-- dots -->
+        <div class="hero-carousel__dots">
+          <label for="hero-1" data-dot="hero-1"></label>
+          <label for="hero-2" data-dot="hero-2"></label>
+          <label for="hero-3" data-dot="hero-3"></label>
+        </div>
+      </div>
+
+      <!-- right dark card -->
+      <aside class="hero-card">
+        <p class="hero-card__tag">Empowering your financial journey · Accounts, Loans, Digital Services</p>
+        <h2>Banking Made Simple</h2>
+        <p class="hero-card__sub">Your Own Bank, Always With you</p>
+
+        <div class="hero-card__grid">
+          <div class="hero-card__logins">
+            <a href="#" class="login-row">
+              <span><strong>Net Banking</strong><small>Login to NetBanking</small></span>
+              <span class="login-row__btn">⇥</span>
+            </a>
+            <a href="#" class="login-row">
+              <span><strong>Net Banking</strong><small>Login to NetBanking</small></span>
+              <span class="login-row__btn login-row__btn--label">Login ⇥</span>
+            </a>
+          </div>
+          <div class="hero-card__qrs">
+            <div class="qr">
+              <span class="qr__img" aria-hidden="true"></span>
+              <span>SCAN ME</span>
+            </div>
+            <div class="qr">
+              <span class="qr__img" aria-hidden="true"></span>
+              <span>SCAN ME</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ======================= BANKING PRODUCTS ======================= -->
+  <section class="products">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Apply for Banking Products</h2>
+          <p class="section-sub">Explore industry-best offerings</p>
+        </div>
+        <a href="#" class="btn btn--outline">Go to Easy Banking <span class="btn__arrow">⟶</span></a>
+      </div>
+    </div>
+
+    <div class="container products__rail-wrap">
+      <button class="rail-arrow rail-arrow--prev" aria-label="Previous products">‹</button>
+      <div class="products__rail">
+
+        <article class="p-card">
+          <div class="p-card__img p-card__img--tax">
+            <picture>
+              <source srcset="images/epaymentofdirecttaxes.webp" type="image/webp" />
+              <img src="images/epaymentofdirecttaxes.png" alt="e Payment of Direct Taxes" width="220" height="130" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <h3>e Payment of<br/>Direct Taxes</h3>
+          <a href="#" class="btn btn--white">Know More <span class="btn__arrow">➜</span></a>
+        </article>
+
+        <article class="p-card">
+          <div class="p-card__img p-card__img--debit">
+            <picture>
+              <source srcset="images/atmcard.webp" type="image/webp" />
+              <img src="images/atmcard.png" alt="ATM / Debit Cards" width="220" height="130" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <h3>ATM / Debit Cards</h3>
+          <a href="#" class="btn btn--white">Know More <span class="btn__arrow">➜</span></a>
+        </article>
+
+        <article class="p-card p-card--featured">
+          <div class="p-card__img p-card__img--credit">
+            <picture>
+              <source srcset="images/credit_card.webp" type="image/webp" />
+              <img src="images/credit_card.png" alt="Credit Cards" width="220" height="130" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <h3>Credit Cards</h3>
+          <p>A light card for the basic, shopping, travelling or dining experience.</p>
+          <a href="#" class="btn btn--navy">Know More <span class="btn__arrow">➜</span></a>
+        </article>
+
+        <article class="p-card">
+          <div class="p-card__img p-card__img--banca">
+            <picture>
+              <source srcset="images/bank_assurance.webp" type="image/webp" />
+              <img src="images/bank_assurance.png" alt="Bancassurance" width="220" height="130" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <h3>Bancassurance</h3>
+          <a href="#" class="btn btn--white">Know More <span class="btn__arrow">➜</span></a>
+        </article>
+
+        <article class="p-card">
+          <div class="p-card__img p-card__img--doorstep">
+            <picture>
+              <source srcset="images/doorstep_banking.webp" type="image/webp" />
+              <img src="images/doorstep_banking.png" alt="Doorstep Banking" width="220" height="130" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <h3>Doorstep Banking</h3>
+          <a href="#" class="btn btn--white">Know More <span class="btn__arrow">➜</span></a>
+        </article>
+      </div>
+      <button class="rail-arrow rail-arrow--next" aria-label="Next products">›</button>
+    </div>
+  </section>
+
+  <!-- ======================= WIDGETS ROW ======================= -->
+  <section class="widgets">
+    <div class="container widgets__grid">
+
+      <!-- Rates Snapshot -->
+      <div class="widget">
+        <h3 class="widget__title">Rates Snapshot</h3>
+        <p class="widget__sub">Smart rates for smarter decisions</p>
+        <div class="rate-rows">
+          <div class="rate-row">
+            <span class="rate-row__name">MCLR <small>(w.e.f. 03/09/2025)</small></span>
+            <span class="rate-row__val">8.85%</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-row__name">REPO RATE <small>(w.e.f. 09/06/2025)</small></span>
+            <span class="rate-row__val">5.50%</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-row__name">TBLR <small>(w.e.f. 03/09/2025)</small></span>
+            <span class="rate-row__val">5.55%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Feed -->
+      <div class="widget">
+        <h3 class="widget__title">Market Feed</h3>
+        <div class="feed-rows">
+          <div class="feed-row"><span class="feed-row__name">BSE</span><span class="feed-row__val">80,504.25</span></div>
+          <div class="feed-row"><span class="feed-row__name">NSE</span><span class="feed-row__val">24,685.60</span></div>
+          <div class="feed-row"><span class="feed-row__name feed-row__name--bold">Indian Bank (BSE)</span><span class="feed-row__val">723.00</span></div>
+          <div class="feed-row"><span class="feed-row__name feed-row__name--bold">Indian Bank (NSE)</span><span class="feed-row__val">723.45</span></div>
+        </div>
+      </div>
+
+      <!-- Calculators -->
+      <div class="widget widget--calc">
+        <div class="widget--calc__head">
+          <div class="calc-tabs">
+            <button class="calc-tab calc-tab--active" data-calc="emi" type="button">
+              <span class="calc-tab__icon calc-tab__icon--emi">🧮</span> EMI<br/>Calculator
+            </button>
+            <button class="calc-tab" data-calc="car" type="button">
+              <span class="calc-tab__icon calc-tab__icon--car">🚗</span> Car loan<br/>Calculator
+            </button>
+            <button class="calc-tab" data-calc="gold" type="button">
+              <span class="calc-tab__icon calc-tab__icon--gold">🪙</span> Gold Loan<br/>Calculator
+            </button>
+          </div>
+          <div class="calc-body">
+            <div class="calc-body__title-row">
+              <div>
+                <h3 class="widget__title" id="calc-title">EMI Calculator</h3>
+                <p class="widget__sub">Smart tools for smarter money moves</p>
+              </div>
+              <span class="calc-body__emoji" id="calc-emoji">🧮</span>
+            </div>
+
+            <p class="calc-meta">
+              Interest Rate <strong id="calc-rate">10.50% p.a.</strong>
+              <span class="calc-meta__note" id="calc-note" hidden>Loan up to 75% of gold value</span>
+            </p>
+
+            <label class="calc-label" for="amount" id="calc-amount-label">Loan Amount</label>
+            <div class="calc-slider">
+              <input type="range" id="amount" min="50000" max="5000000" step="10000" value="1000000" />
+              <span class="calc-slider__readout"><span id="calc-amount-val">₹ 10,00,000</span><small id="calc-amount-words">10 Lakh</small></span>
+            </div>
+            <div class="calc-slider__scale">
+              <span>50K</span><span>10L</span><span>20L</span><span>30L</span><span>40L</span><span>50L</span>
+            </div>
+
+            <label class="calc-label">Duration</label>
+            <div class="calc-chips">
+              <button class="chip chip--active" data-months="6" type="button">6 Months</button>
+              <button class="chip" data-months="12" type="button">1 Year</button>
+              <button class="chip" data-months="24" type="button">2 Year</button>
+              <button class="chip" data-months="custom" type="button">Custom</button>
+            </div>
+            <div class="calc-custom" id="calc-custom" hidden>
+              <label for="custom-months">Custom duration (months)</label>
+              <input type="number" id="custom-months" min="3" max="360" value="36" />
+            </div>
+
+            <div class="calc-results">
+              <div class="calc-result calc-result--gold" id="res-eligible-box" hidden>
+                <small>Eligible Loan</small>
+                <strong id="res-eligible">₹ 0</strong>
+              </div>
+              <div class="calc-result calc-result--main">
+                <small>Monthly EMI</small>
+                <strong id="res-emi">₹ 1,71,808</strong>
+              </div>
+              <div class="calc-result">
+                <small>Total Interest</small>
+                <strong id="res-interest">₹ 30,847</strong>
+              </div>
+              <div class="calc-result">
+                <small>Total Payable</small>
+                <strong id="res-total">₹ 10,30,847</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= QUICK CARDS ======================= -->
+  <section class="quick">
+    <div class="container quick__grid">
+      <a href="#" class="q-card">
+        <span class="q-card__icon q-card__icon--info">i</span>
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+        <span class="q-card__go">➜</span>
+      </a>
+      <a href="#" class="q-card">
+        <span class="q-card__icon q-card__icon--mail">✉</span>
+        <h3>Lodge a Complaint</h3>
+        <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+        <span class="q-card__go">➜</span>
+      </a>
+      <a href="#" class="q-card">
+        <span class="q-card__icon q-card__icon--phone">✆</span>
+        <h3>Contact Us</h3>
+        <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+        <span class="q-card__go">➜</span>
+      </a>
+      <a href="#" class="q-card">
+        <span class="q-card__icon q-card__icon--online">🖥</span>
+        <h3>Online Services</h3>
+        <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+        <span class="q-card__go">➜</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================= SOCIAL MEDIA ======================= -->
+  <section class="social">
+    <div class="container">
+      <h2 class="section-title">Social Media</h2>
+      <p class="section-sub">Smart ways to get connected with us</p>
+
+      <div class="social__grid">
+        <div class="s-card">
+          <div class="s-card__head s-card__head--fb">Facebook</div>
+          <div class="s-card__body">
+            <picture>
+              <source srcset="images/facebook.webp" type="image/webp" />
+              <img src="images/facebook.png" alt="Facebook feed preview" width="360" height="280" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        </div>
+
+        <div class="s-card">
+          <div class="s-card__head s-card__head--tw">Twitter</div>
+          <div class="s-card__body">
+            <picture>
+              <source srcset="images/twitter.webp" type="image/webp" />
+              <img src="images/twitter.png" alt="Twitter feed preview" width="360" height="280" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        </div>
+
+        <div class="s-card">
+          <div class="s-card__head s-card__head--ig">Instagram</div>
+          <div class="s-card__body">
+            <picture>
+              <source srcset="images/instagram.webp" type="image/webp" />
+              <img src="images/instagram.png" alt="Instagram feed preview" width="360" height="280" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= BLOGS ======================= -->
+  <section class="blogs">
+    <div class="container">
+      <h2 class="section-title">Our Blogs</h2>
+      <p class="section-sub">Smart ways to get connected with us</p>
+
+      <div class="blogs__grid">
+        <article class="b-card">
+          <div class="b-card__img b-card__img--1"><span>BANKING</span></div>
+          <div class="b-card__body">
+            <h3>Blog Heading 1</h3>
+            <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+            <div class="b-card__foot">
+              <time>Sept 30, 2025</time>
+              <a href="#" class="btn btn--navy btn--sm">Know More <span class="btn__arrow">➜</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="b-card">
+          <div class="b-card__img b-card__img--2"><span>BANKING</span></div>
+          <div class="b-card__body">
+            <h3>Blog Heading 1</h3>
+            <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+            <div class="b-card__foot">
+              <time>Sept 30, 2025</time>
+              <a href="#" class="btn btn--navy btn--sm">Know More <span class="btn__arrow">➜</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="b-card">
+          <div class="b-card__img b-card__img--3"><span>BANKING</span></div>
+          <div class="b-card__body">
+            <h3>Blog Heading 1</h3>
+            <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+            <div class="b-card__foot">
+              <time>Sept 30, 2025</time>
+              <a href="#" class="btn btn--navy btn--sm">Know More <span class="btn__arrow">➜</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="b-card">
+          <div class="b-card__img b-card__img--4"><span>BANKING</span></div>
+          <div class="b-card__body">
+            <h3>Blog Heading 1</h3>
+            <p>Lorem ipsum dolor sit amet. Ut quos nemo qui excepturi...</p>
+            <div class="b-card__foot">
+              <time>Sept 30, 2025</time>
+              <a href="#" class="btn btn--navy btn--sm">Know More <span class="btn__arrow">➜</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="footer__strip">
+    <div class="container footer__strip-inner">
+      <a href="#"><span>🎬</span> Media</a>
+      <a href="#"><span>💼</span> Career</a>
+      <a href="#"><span>❓</span> FAQ</a>
+      <a href="#"><span>👥</span> Investors</a>
+      <a href="#"><span>📋</span> Tender/Notices</a>
+      <a href="#"><span>🏛</span> Netbanking</a>
+    </div>
+  </div>
+
+  <div class="footer__main">
+    <div class="container footer__cols">
+      <div class="f-col">
+        <p class="f-col__tag">All you may want to know</p>
+        <h4>About Indian Bank</h4>
+        <a href="#">About Us</a>
+        <a href="#">Our Story</a>
+        <a href="#">Our Philosophy</a>
+        <a href="#">Board of Directors</a>
+        <a href="#">Leadership Team</a>
+        <a href="#">Beyond Banking</a>
+        <a href="#">Customer Stories</a>
+        <h4>Investors' Corner</h4>
+        <a href="#">Investors</a>
+        <a href="#">Annual Reports</a>
+        <a href="#">Quarterly Reports</a>
+        <a href="#">Credit Ratings</a>
+        <a href="#">Corporate Governance</a>
+      </div>
+
+      <div class="f-col">
+        <h4>Media Section</h4>
+        <a href="#">Media Room</a>
+        <a href="#">News</a>
+        <a href="#">Awards</a>
+        <a href="#">Events</a>
+        <a href="#">Media Kit</a>
+        <a href="#">Knowledge Hub</a>
+        <h4>DICGC</h4>
+        <div class="dicgc">
+          <span class="dicgc__qr"></span>
+          <span class="dicgc__logo">DIC<br/>GC</span>
+        </div>
+        <p class="f-note">Indian Bank is registered with DICGC<br/><a href="#">https://www.dicgc.org.in</a></p>
+      </div>
+
+      <div class="f-col">
+        <p class="f-col__tag">All you may need</p>
+        <h4>Join Us</h4>
+        <a href="#">Careers</a>
+        <a href="#">Join Our Team</a>
+        <h4>Offers &amp; Discounts</h4>
+        <a href="#">Debit Card Offers</a>
+        <a href="#">Exclusive Offers</a>
+      </div>
+
+      <div class="f-col">
+        <h4>Tools &amp; Resources</h4>
+        <a href="#">Calculators</a>
+        <a href="#">Forms &amp; Documents</a>
+        <h4>Reach us</h4>
+        <a href="#">FAQs</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Share Your Feedback</a>
+        <a href="#">Grievance Redressal</a>
+      </div>
+
+      <div class="f-col">
+        <p class="f-col__tag">Let's get social</p>
+        <div class="f-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+        <p class="f-col__tag">Download IndSmart Mobile App</p>
+        <a href="#" class="store-badge">
+          <small>GET IT ON</small>
+          Google Play
+        </a>
+        <a href="#" class="store-badge">
+          <small>Download on the</small>
+          App Store
+        </a>
+        <p class="f-col__tag">WhatsApp Banking</p>
+        <p class="f-contact"><span class="wa">✆</span> +91 8754424242</p>
+        <p class="f-col__tag">Toll-free no. <strong class="f-tollfree">1800-1700</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__terms">
+    <div class="container">
+      <h4>Terms, Polices &amp; Regulations</h4>
+      <p class="terms-links">
+        <a href="#">Terms &amp; Policies</a> | <a href="#">Regulatory Disclosures</a> | <a href="#">Rates &amp; Charges</a> | <a href="#">Unauthorised Electronic Transactions</a> | <a href="#">RBI Kehta Hai</a> | <a href="#">RBI Advisory Notifications</a> | <a href="#">IBA Notifications</a> | <a href="#">PMAYCLSS</a> | <a href="#">Contact for Law Enforcement Agencies</a> | <a href="#">Services for Differently Abled</a> | <a href="#">Positive Pay System</a> | <a href="#">Aadhaar Enrolment</a> | <a href="#">Function Heads</a> | <a href="#">State Wise GST</a> | <a href="#">Disclaimer</a> | <a href="#">Notices</a> | <a href="#">Properties for Sale</a> | <a href="#">US Patriot Act Certification</a> | <a href="#">Communication Archives</a> | <a href="#">Safe Banking Practices</a> | <a href="#">RBI BE(A)WARE</a> | <a href="#">Shukriya - AKAM</a> | <a href="#">DICGC ( Deposit Insurance &amp; Credit Guarantee Corporations )</a> | <a href="#">Portfolio Sale</a> | <a href="#">Unclaimed Deposits</a> | <a href="#">Fraud Awareness - Protect yourself from fraudsters</a> | <a href="#">Loan Scheme Change</a> | <a href="#">Secured Asset Possessed Under SARFAESI Act 2002</a> | <a href="#">Bharat Aadhaar Seeding Enabler (BASE)</a> | <a href="#">NACH Mandate Cancellation</a> | <a href="#">E-Learning Management System (E-LMS)</a> | <a href="#">Activation of Inoperative / Dormant Accounts</a> | <a href="#">Independent Arbitration Institutions</a> | <a href="#">Say No to Money Mule Scams</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var link = document.querySelector('link[rel="preload"][as="style"]');
+    if (link && !link.onload) link.rel = "stylesheet";
+  })();
+</script>
+<script src="js/site.js" defer></script>
+<script src="js/calculator.js" defer></script>
+</body>
+</html>
